@@ -1,0 +1,7 @@
+# Netlify redirects: every address ends up at https://soljourneys.in
+http://sol-journeys.com/*      https://soljourneys.in/:splat  301!
+https://sol-journeys.com/*     https://soljourneys.in/:splat  301!
+http://www.sol-journeys.com/*  https://soljourneys.in/:splat  301!
+https://www.sol-journeys.com/* https://soljourneys.in/:splat  301!
+http://www.soljourneys.in/*    https://soljourneys.in/:splat  301!
+https://www.soljourneys.in/*   https://soljourneys.in/:splat  301!

@@ -1,0 +1,42 @@
+# SOL JOURNEYS — Apache rules for GoDaddy cPanel hosting.
+# Every address (http, www, and sol-journeys.com) ends up at https://soljourneys.in
+
+RewriteEngine On
+
+# Let GoDaddy's SSL certificate checks through untouched.
+RewriteCond %{REQUEST_URI} ^/\.well-known/ [NC]
+RewriteRule ^ - [L]
+
+# sol-journeys.com / www.sol-journeys.com -> https://soljourneys.in
+RewriteCond %{HTTP_HOST} ^(www\.)?sol-journeys\.com$ [NC]
+RewriteRule ^(.*)$ https://soljourneys.in/$1 [R=301,L]
+
+# www.soljourneys.in -> soljourneys.in
+RewriteCond %{HTTP_HOST} ^www\.soljourneys\.in$ [NC]
+RewriteRule ^(.*)$ https://soljourneys.in/$1 [R=301,L]
+
+# http -> https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+DirectoryIndex index.html
+Options -Indexes
+
+# Compress text files.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache: built JS/CSS have hashed names so can be kept for a year; photos a month; the page itself always rechecked.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

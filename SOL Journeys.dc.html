@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>SOL JOURNEYS — Curated Private Holidays &amp; Bespoke Itineraries</title>
+<link rel="icon" type="image/jpeg" href="assets/sol-favicon.jpeg">
+<link rel="apple-touch-icon" href="assets/sol-favicon.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Tenor+Sans&display=swap">
+<link rel="stylesheet" href="_ds/organic-e862fbac-69ae-4348-a072-c42f0b3242ba/styles.css">
+<script src="_ds/organic-e862fbac-69ae-4348-a072-c42f0b3242ba/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; }
+a { color: #A45534; }
+a:hover { color: #7f3f25; }
+.input::placeholder { color: color-mix(in srgb, var(--color-text) 62%, transparent); opacity: 1; }
+@keyframes solDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes solRise { from { transform: translateY(190px); } to { transform: translateY(0); } }
+@keyframes solSky { from { opacity: 0.9; } to { opacity: 0.16; } }
+@keyframes solRays { from { opacity: 0; transform: scale(0.72); } to { opacity: 1; transform: scale(1); } }
+@keyframes solSpin { to { transform: rotate(360deg); } }
+@keyframes solWave { from { transform: translateX(0); } to { transform: translateX(-100px); } }
+@keyframes solBoatIn { from { opacity: 0; transform: translateX(64px); } to { opacity: 1; transform: none; } }
+@keyframes solBob { 0%, 100% { transform: translate(0, 0) rotate(-1.6deg); } 50% { transform: translate(-3px, -4px) rotate(1.6deg); } }
+@media (prefers-reduced-motion: reduce) { .sol-anim { animation: none !important; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    <nav style="max-width: 1280px; margin: 0 auto; padding: 14px clamp(20px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 16px 28px; flex-wrap: wrap;">
+      <a href="#top" aria-label="SOL JOURNEYS home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--color-text);">
+        <img src="assets/sol-emblem.png" alt="" style="height: 46px; width: auto; display: block;">
+        <span style="font-family: 'Cinzel', serif; font-weight: 600; font-size: 17px; letter-spacing: 0.24em; white-space: nowrap;">SOL JOURNEYS</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 8px 28px; flex-wrap: wrap;">
+        <a href="#philosophy" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: var(--color-text); padding: 8px 0;" style-hover="color: #A45534;">Philosophy</a>
+        <a href="#stays" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: var(--color-text); padding: 8px 0;" style-hover="color: #A45534;">Curated Stays</a>
+        <a href="#inquire" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: #fbf4e8; background: #A45534; padding: 12px 22px; border-radius: 999px;" style-hover="background: #8e4629; color: #fbf4e8;" style-active="background: #773a22;">Inquire</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section data-screen-label="Hero" style="max-width: 1280px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) clamp(20px, 4vw, 48px) clamp(56px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); align-items: center; gap: clamp(40px, 6vw, 88px); min-height: calc(100vh - 76px); box-sizing: border-box;">
+      <div style="display: flex; flex-direction: column; gap: 28px; max-width: 580px;">
+        <h1 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(34px, 4.6vw, 60px); line-height: 1.14; letter-spacing: 0.05em; margin: 0; text-wrap: balance;">Curated Private Holidays &amp; Bespoke Itineraries</h1>
+        <p style="font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; margin: 0; max-width: 460px; text-wrap: pretty;">Travel, designed around you. Unhurried discovery for the independent traveler.</p>
+        <div style="display: flex; align-items: center; gap: 16px 32px; flex-wrap: wrap; margin-top: 8px;">
+          <a href="#inquire" style="font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: #fbf4e8; background: #A45534; padding: 16px 30px; border-radius: 999px;" style-hover="background: #8e4629; color: #fbf4e8;" style-active="background: #773a22;">Plan a Journey</a>
+          <a href="#itineraries" style="font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: var(--color-text); padding: 8px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-text) 35%, transparent);" style-hover="color: #A45534; border-color: #A45534;">View Itineraries →</a>
+        </div>
+      </div>
+      <div style="width: 100%; max-width: 560px; justify-self: center;">{{ emblem }}</div>
+    </section>
+
+    <sc-if value="{{ showBand }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Dawn band" style="position: relative; width: 100%; height: clamp(360px, 72vh, 760px);">
+        <image-slot id="sol-hero-band" shape="rect" class="washed" placeholder="Full-bleed photograph — misty tea hills or a sailing boat at dawn"></image-slot>
+      </section>
+    </sc-if>
+
+    <section id="philosophy" data-screen-label="Philosophy" style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 10vw, 136px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(32px, 6vw, 96px);">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #8a4529;">Philosophy</span>
+        <h2 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.2; letter-spacing: 0.06em; margin: 0; text-wrap: balance;">The SOL JOURNEYS Approach</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 36px; max-width: 600px;">
+        <p style="font-size: 18px; line-height: 1.7; margin: 0; text-wrap: pretty;">SOL JOURNEYS plans private holidays for travelers who would rather go slowly and go well. Every itinerary starts with a conversation about how you like to travel, then is built day by day around it.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 28px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 0.14em; color: #8a4529;">I</span>
+            <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 18px; letter-spacing: 0.08em; margin: 0;">Designed Around You</h3>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0;">Your pace, your interests, your dates. Nothing is packaged.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 0.14em; color: #8a4529;">II</span>
+            <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 18px; letter-spacing: 0.08em; margin: 0;">Unhurried Pace</h3>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0;">Fewer stops, longer stays and time left open for discovery.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 0.14em; color: #8a4529;">III</span>
+            <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 18px; letter-spacing: 0.08em; margin: 0;">One Planner</h3>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0;">A single point of contact from first call to journey home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itineraries" data-screen-label="Itineraries" style="background: var(--color-surface); border-radius: 48px 48px 0 0;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
+          <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #8a4529;">Itineraries</span>
+          <h2 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.2; letter-spacing: 0.06em; margin: 0;">Signature Journeys</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px;">
+          <sc-for list="{{ itineraries }}" as="it" hint-placeholder-count="3">
+            <article style="display: flex; flex-direction: column; gap: 18px;">
+              <div style="position: relative; width: 100%; aspect-ratio: 4 / 5;">
+                <image-slot id="{{ it.slot }}" shape="rounded" radius="28" class="washed" placeholder="{{ it.placeholder }}"></image-slot>
+              </div>
+              <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #8a4529;">{{ it.kicker }}</span>
+              <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 22px; line-height: 1.3; letter-spacing: 0.06em; margin: 0;">{{ it.title }}</h3>
+              <p style="font-size: 15px; line-height: 1.65; margin: 0; text-wrap: pretty;">{{ it.body }}</p>
+              <a href="#inquire" style="align-self: flex-start; font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: #A45534; padding: 6px 0; border-bottom: 1px solid color-mix(in srgb, #A45534 40%, transparent);" style-hover="color: #7f3f25; border-color: #7f3f25;">Explore Itinerary →</a>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="stays" data-screen-label="Curated Stays" style="background: var(--color-surface);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px) clamp(80px, 11vw, 144px); display: flex; flex-direction: column; gap: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
+          <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #8a4529;">Curated Stays</span>
+          <h2 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.2; letter-spacing: 0.06em; margin: 0;">Sanctuaries We Recommend</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px 32px;">
+          <sc-for list="{{ stays }}" as="st" hint-placeholder-count="3">
+            <article style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="position: relative; width: 100%; aspect-ratio: 3 / 4;">
+                <image-slot id="{{ st.slot }}" mask="inset(0 round 999px 999px 28px 28px)" class="washed" placeholder="{{ st.placeholder }}"></image-slot>
+              </div>
+              <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #8a4529; margin-top: 8px;">{{ st.place }}</span>
+              <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 21px; line-height: 1.3; letter-spacing: 0.06em; margin: 0;">{{ st.name }}</h3>
+              <p style="font-size: 15px; line-height: 1.65; margin: 0; text-wrap: pretty;">{{ st.body }}</p>
+              <a href="#inquire" style="align-self: flex-start; font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: #A45534; padding: 6px 0; border-bottom: 1px solid color-mix(in srgb, #A45534 40%, transparent);" style-hover="color: #7f3f25; border-color: #7f3f25;">View Journey Notes →</a>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="inquire" data-screen-label="Inquire" style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 10vw, 136px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(40px, 6vw, 96px); align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 22px; max-width: 480px;">
+        <span style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #8a4529;">Inquire</span>
+        <h2 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.2; letter-spacing: 0.06em; margin: 0;">Begin Your Journey</h2>
+        <p style="font-size: 17px; line-height: 1.7; margin: 0; text-wrap: pretty;">Share a few details and a SOL JOURNEYS planner will be in touch within one working day, by call or WhatsApp if you prefer.</p>
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="align-self: flex-start; display: flex; align-items: center; gap: 10px; font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; color: var(--color-text); padding: 6px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-text) 35%, transparent);" style-hover="color: #A45534; border-color: #A45534;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          Message on WhatsApp →
+        </a>
+      </div>
+
+      <div style="background: var(--color-surface); border-radius: 32px; padding: clamp(24px, 4vw, 44px);">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0;">
+            <h3 style="font-family: 'Cinzel', serif; font-weight: 500; font-size: 24px; letter-spacing: 0.06em; margin: 0;">Thank You</h3>
+            <p style="font-size: 16px; line-height: 1.7; margin: 0;">Your inquiry has reached SOL JOURNEYS. We will be in touch shortly.</p>
+            <button type="button" onClick="{{ reset }}" style="align-self: flex-start; background: none; border: 0; padding: 6px 0; cursor: pointer; font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A45534; border-bottom: 1px solid color-mix(in srgb, #A45534 40%, transparent);">Send another inquiry →</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 22px 20px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="f-name" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Full Name</label>
+              <input id="f-name" class="input" required="" autocomplete="name" placeholder="Your name" style="min-height: 50px; font-size: 16px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="f-email" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Email</label>
+              <input id="f-email" type="email" class="input" required="" autocomplete="email" placeholder="you@example.com" style="min-height: 50px; font-size: 16px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1;">
+              <label for="f-phone" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Phone / WhatsApp Number</label>
+              <input id="f-phone" type="tel" inputmode="tel" class="input" autocomplete="tel" placeholder="+91 XXXXX XXXXX" style="min-height: 50px; font-size: 16px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="f-dest" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Destination</label>
+              <input id="f-dest" class="input" placeholder="Where would you like to go?" style="min-height: 50px; font-size: 16px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="f-dates" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Travel Dates</label>
+              <input id="f-dates" class="input" placeholder="e.g. December 2026, 10 nights" style="min-height: 50px; font-size: 16px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1;">
+              <label for="f-msg" style="font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text);">Tell Us About Your Journey</label>
+              <textarea id="f-msg" class="input" rows="4" placeholder="Travelers, interests, the pace you enjoy" style="min-height: 120px; font-size: 16px; padding-top: 14px; border-radius: 24px; background: var(--color-bg); border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);"></textarea>
+            </div>
+            <div style="grid-column: 1 / -1; display: flex;">
+              <button type="submit" style="font-family: 'Tenor Sans', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #fbf4e8; background: #A45534; border: 0; padding: 17px 34px; border-radius: 999px; cursor: pointer;" style-hover="background: #8e4629;" style-active="background: #773a22;">Send Inquiry</button>
+            </div>
+          </form>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--color-surface); border-radius: 48px 48px 0 0;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 64px clamp(20px, 4vw, 48px) 40px; display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+        <img src="assets/sol-logo-transparent.png" alt="SOL JOURNEYS — Travel, designed around you" style="width: 190px; height: auto; display: block; margin: -24px 0 -24px -18px;">
+        <div style="display: flex; gap: 48px 72px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #8a4529;">Explore</span>
+            <a href="#philosophy" style="font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">Philosophy</a>
+            <a href="#itineraries" style="font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">Itineraries</a>
+            <a href="#stays" style="display: flex; align-items: center; gap: 8px; font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path></svg>
+              Curated Stays
+            </a>
+            <a href="#inquire" style="font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">Inquire</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: 'Tenor Sans', sans-serif; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #8a4529;">Contact</span>
+            <a href="{{ waHref }}" target="_blank" rel="noopener" style="font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">WhatsApp Concierge</a>
+            <a href="https://soljourneys.in" style="font-size: 15px; text-decoration: none; color: var(--color-text);" style-hover="color: #A45534;">soljourneys.in</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent); font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.14em; color: var(--color-text);">© 2026 SOL Journeys. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Chat with the SOL JOURNEYS concierge on WhatsApp" style="position: fixed; right: clamp(16px, 3vw, 32px); bottom: clamp(16px, 3vw, 32px); z-index: 30; display: flex; align-items: center; gap: 10px; padding: 14px 20px 14px 16px; border-radius: 999px; background: #1f3a2c; color: #fbf4e8; text-decoration: none; box-shadow: var(--shadow-lg); font-family: 'Tenor Sans', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;" style-hover="background: #2a4d3b; color: #fbf4e8;" style-active="background: #173026;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+    Concierge
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;910000000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Concierge&quot;},&quot;introSpeed&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Calm&quot;,&quot;Standard&quot;,&quot;Brisk&quot;],&quot;default&quot;:&quot;Standard&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Sunrise intro&quot;},&quot;showPhotoBand&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { run: 0, sent: false };
+
+  emblem() {
+    const h = React.createElement;
+    const speed = { Calm: 1.4, Standard: 1, Brisk: 0.65 }[this.props.introSpeed] ?? 1;
+    const t = (s) => (s * speed).toFixed(2) + 's';
+    const A = 'sol-anim';
+    const cx = 228, cy = 190;
+    const arch = 'M20 350 V200 A180 180 0 0 1 380 200 V350 Z';
+    const rays = [];
+    for (let i = 0; i < 36; i++) {
+      const a = (i / 36) * Math.PI * 2;
+      const long = i % 2 === 0;
+      const r0 = 72, r1 = r0 + (long ? (i % 4 === 0 ? 70 : 52) : 30);
+      rays.push(h('line', { key: i, x1: cx + Math.cos(a) * r0, y1: cy + Math.sin(a) * r0, x2: cx + Math.cos(a) * r1, y2: cy + Math.sin(a) * r1, stroke: long ? '#eea23a' : '#f4bf5c', strokeWidth: long ? 3 : 2, strokeLinecap: 'round' }));
+    }
+    const wave = (y, a) => { let d = `M-200 ${y} q25 ${-a} 50 0`; for (let i = 0; i < 15; i++) d += ' t50 0'; return d + ' L600 400 L-200 400 Z'; };
+    const waveLayer = (key, y, a, fill, dur, rev) => h('g', { key, className: A, style: { animation: `solWave ${dur}s linear infinite${rev ? ' reverse' : ''}` } },
+      h('path', { d: wave(y, a), fill, stroke: '#fbf4e8', strokeWidth: 3 }));
+    const origin = { transformBox: 'view-box', transformOrigin: `${cx}px ${cy}px` };
+
+    return h('svg', {
+      key: this.state.run, viewBox: '0 0 400 360', role: 'img',
+      'aria-label': 'SOL JOURNEYS emblem: the sun rising over mountains beside a sailing boat',
+      onClick: () => this.setState((s) => ({ run: s.run + 1 })),
+      style: { width: '100%', height: 'auto', display: 'block', cursor: 'pointer', overflow: 'visible' }
+    },
+      h('defs', null,
+        h('clipPath', { id: 'solArchClip' }, h('path', { d: arch })),
+        h('radialGradient', { id: 'solSun', cx: '42%', cy: '38%', r: '70%' },
+          h('stop', { offset: '0%', stopColor: '#ffd65a' }), h('stop', { offset: '55%', stopColor: '#f59a23' }), h('stop', { offset: '100%', stopColor: '#d8521f' })),
+        h('linearGradient', { id: 'solDawn', x1: 0, y1: 0, x2: 0, y2: 1 },
+          h('stop', { offset: '0%', stopColor: '#f6d7b8' }), h('stop', { offset: '100%', stopColor: '#eea56e' })),
+        h('linearGradient', { id: 'solTerra', x1: 0, y1: 0, x2: 1, y2: 1 },
+          h('stop', { offset: '0%', stopColor: '#d07a43' }), h('stop', { offset: '100%', stopColor: '#a24d28' })),
+        h('linearGradient', { id: 'solGreen', x1: 0, y1: 0, x2: 1, y2: 1 },
+          h('stop', { offset: '0%', stopColor: '#2f6a47' }), h('stop', { offset: '100%', stopColor: '#1a3f2b' }))
+      ),
+      h('g', { clipPath: 'url(#solArchClip)' },
+        h('rect', { x: 0, y: 0, width: 400, height: 360, fill: '#fbf4e8' }),
+        h('rect', { x: 0, y: 0, width: 400, height: 360, fill: 'url(#solDawn)', className: A, style: { opacity: 0.16, animation: `solSky ${t(3.4)} ease-out ${t(0.3)} both` } }),
+        h('g', { className: A, style: { animation: `solRise ${t(2.8)} cubic-bezier(.22,.7,.2,1) ${t(0.5)} both` } },
+          h('g', { className: A, style: { ...origin, animation: `solRays ${t(1.4)} ease-out ${t(2.4)} both` } },
+            h('g', { className: A, style: { ...origin, animation: 'solSpin 140s linear infinite' } }, rays)),
+          h('circle', { cx, cy, r: 70, fill: '#f7b54a', opacity: 0.22 }),
+          h('circle', { cx, cy, r: 58, fill: 'url(#solSun)' })
+        ),
+        h('path', { d: 'M92 360 L150 205 L172 150 L196 198 L212 224 L230 206 L300 360 Z', fill: 'url(#solTerra)', stroke: '#fbf4e8', strokeWidth: 4, strokeLinejoin: 'round' }),
+        h('path', { d: 'M4 360 L66 286 L126 206 L148 232 L168 246 L194 264 L214 258 L276 360 Z', fill: 'url(#solGreen)', stroke: '#fbf4e8', strokeWidth: 4, strokeLinejoin: 'round' }),
+        h('path', { d: 'M40 360 L126 256 L150 286 L232 360 Z', fill: '#163826', opacity: 0.45 }),
+        waveLayer('w1', 312, 4, '#6fa8a0', 9, true),
+        waveLayer('w2', 324, 5, '#2f7c7f', 7, false),
+        h('g', { transform: 'translate(282 304)' },
+          h('g', { className: A, style: { animation: `solBoatIn ${t(1.6)} cubic-bezier(.2,.7,.2,1) ${t(1.5)} both` } },
+            h('g', { className: A, style: { transformBox: 'fill-box', transformOrigin: '50% 100%', animation: 'solBob 4.6s ease-in-out infinite' } },
+              h('path', { d: 'M48 -60 L48 18 L82 18 Z', fill: '#f6eedd', stroke: '#e3d6bd', strokeWidth: 1.2, strokeLinejoin: 'round' }),
+              h('path', { d: 'M42 -44 L42 18 L14 18 Z', fill: '#f6eedd', stroke: '#e3d6bd', strokeWidth: 1.2, strokeLinejoin: 'round' }),
+              h('line', { x1: 45, y1: -66, x2: 45, y2: 22, stroke: '#1b3a5c', strokeWidth: 3.2, strokeLinecap: 'round' }),
+              h('path', { d: 'M0 22 L90 22 L76 38 L12 38 Z', fill: '#1b3a5c', stroke: '#fbf4e8', strokeWidth: 2, strokeLinejoin: 'round' })
+            )
+          )
+        ),
+        waveLayer('w3', 338, 5, '#1d5b66', 6, false)
+      ),
+      h('path', { d: arch, fill: 'none', stroke: '#16261f', strokeWidth: 7, strokeLinejoin: 'round', pathLength: 1, strokeDasharray: 1, className: A, style: { strokeDashoffset: 0, animation: `solDraw ${t(1.6)} cubic-bezier(.6,0,.2,1) 0s both` } })
+    );
+  }
+
+  renderVals() {
+    const num = String(this.props.whatsappNumber ?? '910000000000').replace(/\D/g, '');
+    return {
+      emblem: this.emblem(),
+      showBand: this.props.showPhotoBand ?? true,
+      waHref: `https://wa.me/${num}?text=${encodeURIComponent('Hello SOL Journeys, I would like to plan a journey.')}`,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+      itineraries: [
+        { slot: 'sol-it-1', placeholder: 'Tea estates in morning mist', kicker: '7 Nights · Kerala', title: 'The Tea Hills of Munnar', body: 'Plantation bungalows above the clouds, slow walks through the estates and a final night on the backwaters.' },
+        { slot: 'sol-it-2', placeholder: 'Palace courtyard at golden hour', kicker: '9 Nights · Rajasthan', title: 'Palaces of Rajasthan', body: 'Udaipur, Jodhpur and the Thar by private car, with heritage stays and evenings kept free.' },
+        { slot: 'sol-it-3', placeholder: 'Sailing boat on a calm lagoon at dawn', kicker: '8 Nights · Sri Lanka & Maldives', title: 'Island Coasts', body: 'Galle Fort and the southern coast, then an overwater villa in the Maldives to close.' }
+      ],
+      stays: [
+        { slot: 'sol-stay-1', placeholder: 'Amanpuri pavilion', place: 'Phuket, Thailand', name: 'Amanpuri', body: 'Pavilions set in a coconut grove above Pansea Beach on the Andaman Sea.' },
+        { slot: 'sol-stay-2', placeholder: 'Al Maha dunes', place: 'Dubai Desert Conservation Reserve', name: 'Al Maha, a Luxury Collection Desert Resort', body: 'Private pool suites facing open dunes, with oryx and gazelle roaming the reserve.' },
+        { slot: 'sol-stay-3', placeholder: 'Mandapa river villas', place: 'Ubud, Bali, Indonesia', name: 'Mandapa, a Ritz-Carlton Reserve', body: 'Riverside villas among terraced rice paddies in the Ayung River valley.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

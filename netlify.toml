@@ -1,0 +1,4 @@
+# Used when the site is connected to Netlify from Git; drag-and-drop uploads of dist/ ignore it.
+[build]
+  command = "npm run build"
+  publish = "dist"

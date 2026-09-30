@@ -1,0 +1,4 @@
+node_modules
+dist
+soljourneys-upload.zip
+.env.deploy
