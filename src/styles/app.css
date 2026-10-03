@@ -141,3 +141,37 @@ html, body { overflow-x: clip; }
   .concierge-fab { padding: 15px; right: 14px; bottom: 14px; }
   .concierge-fab .fab-label { display: none; }
 }
+
+/* Itinerary popup: story first, inquiry form beneath.
+   The dialog is a fixed frame; .itin-modal-inner scrolls inside it. */
+html:has(.itin-modal[open]) { overflow: hidden; }
+.itin-modal { width: min(760px, calc(100% - 48px)); max-width: none; max-height: min(880px, calc(100svh - 64px)); padding: 0; border: 0; border-radius: 32px; background: var(--color-bg); color: var(--color-text); box-shadow: 0 30px 80px rgba(18, 30, 24, 0.35); overflow: hidden; }
+.itin-modal[open] { display: flex; flex-direction: column; animation: solFadeUp 0.4s ease both; }
+.itin-modal::backdrop { background: rgba(18, 30, 24, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: solFadeIn 0.3s ease both; }
+.itin-modal-inner { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, #A45534 55%, transparent) transparent; }
+.itin-modal-inner::-webkit-scrollbar { width: 10px; }
+.itin-modal-inner::-webkit-scrollbar-track { background: transparent; margin-block: 28px; }
+.itin-modal-inner::-webkit-scrollbar-thumb { background: color-mix(in srgb, #A45534 50%, transparent); border-radius: 999px; border: 3px solid transparent; background-clip: padding-box; }
+.itin-modal-inner::-webkit-scrollbar-thumb:hover { background-color: #A45534; }
+.itin-modal-close-bar { position: sticky; top: 0; z-index: 2; height: 0; display: flex; justify-content: flex-end; }
+.itin-modal-close { margin: 16px 16px 0 0; flex: none; box-shadow: 0 6px 18px rgba(18, 30, 24, 0.25); }
+.itin-modal-photo { position: relative; aspect-ratio: 16 / 7; }
+.itin-modal-body { display: flex; flex-direction: column; gap: 32px; padding: clamp(24px, 5vw, 52px); }
+.itin-story { display: flex; flex-direction: column; gap: 18px; }
+.itin-story p { margin: 0; font-size: 17px; line-height: 1.8; text-wrap: pretty; }
+.itin-story p:first-child::first-letter { font-family: 'Cinzel', serif; float: left; font-size: 3.4em; line-height: 0.9; padding: 6px 10px 0 0; color: #8a4529; }
+.itin-modal-form { display: flex; flex-direction: column; gap: 26px; padding: clamp(22px, 4vw, 36px); border-radius: 28px; background: var(--color-surface); }
+@media (prefers-reduced-motion: reduce) { .itin-modal[open], .itin-modal::backdrop { animation: none; } }
+@media (max-width: 640px) {
+  .itin-modal { width: calc(100% - 24px); max-height: calc(100svh - 48px); border-radius: 24px; }
+  .itin-modal-inner::-webkit-scrollbar { width: 6px; }
+  .itin-modal-inner::-webkit-scrollbar-thumb { border-width: 1px; }
+  .itin-modal-inner::-webkit-scrollbar-track { margin-block: 22px; }
+  .itin-modal-close { margin: 12px 12px 0 0; width: 40px; height: 40px; }
+  .itin-modal-photo { aspect-ratio: 16 / 10; }
+  .itin-modal-body { padding: 22px 20px 20px; gap: 24px; }
+  .itin-modal-body .section-title { font-size: 24px; }
+  .itin-story { gap: 14px; }
+  .itin-story p { font-size: 16px; line-height: 1.7; }
+  .itin-modal-form { padding: 20px 16px; border-radius: 20px; gap: 20px; }
+}

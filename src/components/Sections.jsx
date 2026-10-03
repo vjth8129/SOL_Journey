@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { itineraries, stays } from '../data.js';
 import Photo from './Photo.jsx';
+import ItineraryModal from './ItineraryModal.jsx';
 
 const pillars = [
   { num: 'I', title: 'Designed Around You', body: 'Your pace, your interests, your dates. Nothing is packaged.' },
@@ -33,6 +35,8 @@ export function Philosophy() {
 }
 
 export function Itineraries() {
+  const [active, setActive] = useState(null);
+
   return (
     <section id="itineraries" data-screen-label="Itineraries" style={{ background: 'var(--color-surface)', borderRadius: '48px 48px 0 0' }}>
       <div className="section-stack" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(72px, 10vw, 128px) clamp(20px, 4vw, 48px)', display: 'flex', flexDirection: 'column', gap: 48 }}>
@@ -49,16 +53,19 @@ export function Itineraries() {
               <span className="kicker" style={{ letterSpacing: '0.26em' }}>{it.kicker}</span>
               <h3 className="font-cinzel" style={{ fontWeight: 500, fontSize: 22, lineHeight: 1.3, letterSpacing: '0.06em', margin: 0 }}>{it.title}</h3>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0, textWrap: 'pretty' }}>{it.body}</p>
-              <a href="#inquire" className="arrow-link">Explore Itinerary →</a>
+              <button type="button" className="arrow-link" aria-haspopup="dialog" onClick={() => setActive(it)}>Explore Itinerary →</button>
             </article>
           ))}
         </div>
       </div>
+      {active && <ItineraryModal key={active.id} itinerary={active} onClose={() => setActive(null)} />}
     </section>
   );
 }
 
 export function Stays() {
+  const [active, setActive] = useState(null);
+
   return (
     <section id="stays" data-screen-label="Curated Stays" style={{ background: 'var(--color-surface)' }}>
       <div className="section-stack" style={{ maxWidth: 1280, margin: '0 auto', padding: '0 clamp(20px, 4vw, 48px) clamp(80px, 11vw, 144px)', display: 'flex', flexDirection: 'column', gap: 48 }}>
@@ -75,11 +82,19 @@ export function Stays() {
               <span className="kicker" style={{ letterSpacing: '0.26em', marginTop: 8 }}>{st.place}</span>
               <h3 className="font-cinzel" style={{ fontWeight: 500, fontSize: 21, lineHeight: 1.3, letterSpacing: '0.06em', margin: 0 }}>{st.name}</h3>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0, textWrap: 'pretty' }}>{st.body}</p>
-              <a href="#inquire" className="arrow-link">View Journey Notes →</a>
+              <button type="button" className="arrow-link" aria-haspopup="dialog" onClick={() => setActive(st)}>View Journey Notes →</button>
             </article>
           ))}
         </div>
       </div>
+      {active && (
+        <ItineraryModal
+          key={active.id}
+          itinerary={{ ...active, kicker: active.place, title: active.name }}
+          formTitle="Plan a Journey Around This Stay"
+          onClose={() => setActive(null)}
+        />
+      )}
     </section>
   );
 }
