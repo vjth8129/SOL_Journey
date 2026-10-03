@@ -145,10 +145,11 @@ html, body { overflow-x: clip; }
 /* Itinerary popup: story first, inquiry form beneath.
    The dialog is a fixed frame; .itin-modal-inner scrolls inside it. */
 html:has(.itin-modal[open]) { overflow: hidden; }
-.itin-modal { width: min(760px, calc(100% - 48px)); max-width: none; max-height: min(880px, calc(100svh - 64px)); padding: 0; border: 0; border-radius: 32px; background: var(--color-bg); color: var(--color-text); box-shadow: 0 30px 80px rgba(18, 30, 24, 0.35); overflow: hidden; }
-.itin-modal[open] { display: flex; flex-direction: column; animation: solFadeUp 0.4s ease both; }
+.itin-modal { width: min(760px, calc(100% - 48px)); max-width: none; max-height: none; padding: 0; border: 0; border-radius: 32px; background: var(--color-bg); color: var(--color-text); box-shadow: 0 30px 80px rgba(18, 30, 24, 0.35); overflow: hidden; }
+.itin-modal[open] { animation: solFadeUp 0.4s ease both; }
 .itin-modal::backdrop { background: rgba(18, 30, 24, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: solFadeIn 0.3s ease both; }
-.itin-modal-inner { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, #A45534 55%, transparent) transparent; }
+/* Height cap lives on the scroller, not a flex parent: Safari collapses flex: 1 children to 0 there. */
+.itin-modal-inner { max-height: calc(100vh - 64px); max-height: min(880px, calc(100svh - 64px)); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, #A45534 55%, transparent) transparent; }
 .itin-modal-inner::-webkit-scrollbar { width: 10px; }
 .itin-modal-inner::-webkit-scrollbar-track { background: transparent; margin-block: 28px; }
 .itin-modal-inner::-webkit-scrollbar-thumb { background: color-mix(in srgb, #A45534 50%, transparent); border-radius: 999px; border: 3px solid transparent; background-clip: padding-box; }
@@ -163,7 +164,8 @@ html:has(.itin-modal[open]) { overflow: hidden; }
 .itin-modal-form { display: flex; flex-direction: column; gap: 26px; padding: clamp(22px, 4vw, 36px); border-radius: 28px; background: var(--color-surface); }
 @media (prefers-reduced-motion: reduce) { .itin-modal[open], .itin-modal::backdrop { animation: none; } }
 @media (max-width: 640px) {
-  .itin-modal { width: calc(100% - 24px); max-height: calc(100svh - 48px); border-radius: 24px; }
+  .itin-modal { width: calc(100% - 24px); border-radius: 24px; }
+  .itin-modal-inner { max-height: calc(100vh - 96px); max-height: calc(100svh - 48px); }
   .itin-modal-inner::-webkit-scrollbar { width: 6px; }
   .itin-modal-inner::-webkit-scrollbar-thumb { border-width: 1px; }
   .itin-modal-inner::-webkit-scrollbar-track { margin-block: 22px; }
