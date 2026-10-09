@@ -50,13 +50,13 @@ export default function Hero({ restartKey }) {
 
         <div className="hero-body">
           <div className="hero-intro" style={{ display: 'flex', flexDirection: 'column', gap: 22, maxWidth: 680, pointerEvents: 'auto' }}>
-            <span className="font-tenor" style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: 12, letterSpacing: '0.32em', textTransform: 'uppercase', color: '#fbf4e8' }}>
+            <span className="font-tenor hero-eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: 12, letterSpacing: '0.32em', textTransform: 'uppercase', color: '#fbf4e8' }}>
               <span style={{ width: 40, height: 2, borderRadius: 2, background: '#f0a836' }} />Private Journeys
             </span>
             <h1 className="font-cinzel" style={{ fontWeight: 500, fontSize: 'clamp(30px, 5vw, 68px)', lineHeight: 1.1, letterSpacing: '0.045em', margin: 0, color: '#fbf4e8', textWrap: 'balance' }}>
               Curated Private Holidays &amp; Bespoke Itineraries
             </h1>
-            <p style={{ fontSize: 'clamp(17px, 1.5vw, 20px)', lineHeight: 1.6, margin: 0, maxWidth: 480, color: '#fbf4e8', textWrap: 'pretty' }}>
+            <p className="hero-lede" style={{ fontSize: 'clamp(17px, 1.5vw, 20px)', lineHeight: 1.6, margin: 0, maxWidth: 480, color: '#fbf4e8', textWrap: 'pretty' }}>
               Travel, designed around you. Unhurried discovery for the independent traveler.
             </p>
             <div className="hero-ctas">
@@ -71,9 +71,9 @@ export default function Hero({ restartKey }) {
                 const on = i === idx;
                 return (
                   <div key={s.id} aria-hidden={!on} style={{ gridArea: '1 / 1', display: 'flex', flexDirection: 'column', gap: 10, opacity: on ? 1 : 0, transform: `translateY(${on ? '0px' : '14px'})`, pointerEvents: on ? 'auto' : 'none', transition: 'opacity 0.9s ease, transform 0.9s ease' }}>
-                    <span className="font-tenor" style={{ fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#f6c983' }}>{s.place}</span>
+                    <span className="font-tenor hero-slide-place" style={{ fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#f6c983' }}>{s.place}</span>
                     <h2 className="font-cinzel" style={{ fontWeight: 500, fontSize: 'clamp(22px, 2.1vw, 28px)', lineHeight: 1.25, letterSpacing: '0.06em', margin: 0, color: '#fbf4e8' }}>{s.title}</h2>
-                    <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: '#fbf4e8', textWrap: 'pretty' }}>{s.line}</p>
+                    <p className="hero-slide-line" style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: '#fbf4e8', textWrap: 'pretty' }}>{s.line}</p>
                   </div>
                 );
               })}

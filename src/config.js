@@ -4,7 +4,11 @@ export const config = {
   whatsappNumber: '918921219545',
   phoneDisplay: '+91 89212 19545',
   // Inquiry form submissions are emailed here (via formsubmit.co).
-  inquiryEmail: 'info@soljourneys.in',
+  inquiryEmail: 'curate@soljourneys.in',
+  // Copied on every inquiry email (comma-separated for several).
+  inquiryCc: 'vjthprivate@gmail.com',
+  // Public contact address shown to visitors on the site.
+  contactEmail: 'curate@soljourneys.in',
   // Social profiles shown in the footer. Replace with the real profile URLs;
   // leave a value empty ('') to hide that icon.
   social: {

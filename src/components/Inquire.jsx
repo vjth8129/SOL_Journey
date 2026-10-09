@@ -31,6 +31,7 @@ export function InquiryForm({ idPrefix = 'f', journey }) {
           ...data,
           _subject: `New inquiry: ${data.Name}${data.Destination ? ` · ${data.Destination}` : ''}`,
           _replyto: data.Email,
+          ...(config.inquiryCc ? { _cc: config.inquiryCc } : {}),
           _template: 'table',
           _captcha: 'false',
         }),
@@ -82,7 +83,7 @@ export function InquiryForm({ idPrefix = 'f', journey }) {
         {status === 'error' && (
           <p role="alert" style={{ fontSize: 15, lineHeight: 1.6, margin: 0, color: '#A45534' }}>
             Sorry, your inquiry could not be sent. Please try again, email us at{' '}
-            <a href={`mailto:${config.inquiryEmail}`} style={{ color: 'inherit' }}>{config.inquiryEmail}</a>{' '}
+            <a href={`mailto:${config.contactEmail}`} style={{ color: 'inherit' }}>{config.contactEmail}</a>{' '}
             or <a href={waHref} target="_blank" rel="noopener" style={{ color: 'inherit' }}>message us on WhatsApp</a>.
           </p>
         )}
